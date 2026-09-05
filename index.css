@@ -1,0 +1,15 @@
+body{
+    margin: 0%;
+}
+
+header{
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+}
+header h1{
+    margin-left: 25px;
+}
