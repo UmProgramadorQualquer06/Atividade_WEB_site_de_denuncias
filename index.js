@@ -1,3 +1,3 @@
 function redirecionar(){
-    window.close()
+    window.location.href = "denuncia.html";
 }
