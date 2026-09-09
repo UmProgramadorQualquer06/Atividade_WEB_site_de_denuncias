@@ -7,28 +7,52 @@ header{
     background-color: black;
     color: white;
     display: flex;
-    justify-content: center;
-    align-items: center;
     padding: 25px;
     border: 10px rgb(34, 34, 34) solid;
+    align-items: center;
+    flex-direction: column;
 }
 header h1{
-    margin-left: 25px;
+    margin: 0%;
+}
+header img{
+    width: 6%;
+    min-width: 50px;
 }
 
-main{
+#info{
     display: flex;
     align-items: center;
     flex-direction: column;
-    margin: 8% 25% 8% 25%;
+    margin: 5% 25% 5% 25%;
     border: 3px black solid;
     padding: 1%;
 }
-main button{
+#info button{
     padding: 5px;
     cursor: pointer;
 }
 
+#denuncia{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 5% 25% 5% 25%;
+    border: 3px black solid;
+    padding: 1%;
+}
+#denuncia button{
+    padding: 5px;
+    cursor: pointer;
+    margin-top: 1%;
+}
+
 footer p{
     margin: 1%;
+}
+
+h1{
+    width: 100%;
+    text-fit: shrink;
+    text-align: center;
 }
