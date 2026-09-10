@@ -1,6 +1,6 @@
 .main div{
     display: flex;
-    width: 75%;
+    width: 100%;
     margin: 1%;
     flex-direction: column;
 }
