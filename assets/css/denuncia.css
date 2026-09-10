@@ -1,0 +1,28 @@
+.main div{
+    display: flex;
+    width: 75%;
+    margin: 1%;
+    flex-direction: column;
+}
+
+.main div a{
+    color: black;
+    text-decoration: none;
+    display: flex;
+    margin: 1%;
+    border: 2px black solid;
+
+    &:hover{
+        background-color: rgb(219, 217, 217);
+    }
+}
+
+.main div a img{
+    margin: 1%;
+    margin-right: 2%;
+}
+
+.main div a p{
+    width: 100%;
+    align-content: center;
+}

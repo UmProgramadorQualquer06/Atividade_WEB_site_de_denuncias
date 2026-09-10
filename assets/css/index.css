@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+body{
+    font-family: 'Open Sans';
+    margin: 0%;
+}
+header{
+    background-color: black;
+    color: white;
+    display: flex;
+    padding: 25px;
+    border: 10px rgb(34, 34, 34) solid;
+    align-items: center;
+    flex-direction: column;
+}
+header h1{
+    margin: 0%;
+}
+header img{
+    width: 6%;
+    min-width: 50px;
+}
+
+.main{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 5% 25% 5% 25%;
+    border: 3px black solid;
+    padding: 1%;
+}
+.main a button{
+    padding: 5px;
+    cursor: pointer;
+}
+
+footer p{
+    margin: 1%;
+}
+
+h1{
+    width: 100%;
+    text-fit: shrink;
+    text-align: center;
+}
