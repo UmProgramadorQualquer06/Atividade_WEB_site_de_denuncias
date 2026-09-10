@@ -1,11 +1,13 @@
 /* =========================
-   ÁREA PRINCIPAL DO REGISTRO
+   ÁREA PRINCIPAL
    ========================= */
 
 .registro {
     display: flex;
+
     width: 100%;
     min-height: 450px;
+
     background-color: #f5f5f5;
 }
 
@@ -17,6 +19,7 @@
 .etapas {
     width: 220px;
     min-width: 220px;
+
     padding: 10px 8px;
 }
 
@@ -27,8 +30,6 @@
     color: #999;
 }
 
-
-/* Cada etapa */
 
 .etapa {
     display: flex;
@@ -42,8 +43,6 @@
     color: #bbb;
 }
 
-
-/* Número da etapa */
 
 .etapa span {
     display: flex;
@@ -63,8 +62,6 @@
 }
 
 
-/* Texto da etapa */
-
 .etapa p {
     margin: 0;
 
@@ -72,7 +69,7 @@
 }
 
 
-/* Etapa atual */
+/* ETAPA ATUAL */
 
 .etapa.atual {
     color: #555;
@@ -81,13 +78,12 @@
 .etapa.atual span {
     background-color: #333;
     border-color: #333;
+
     color: white;
 }
 
 
-/* Etapa concluída
-   Será útil quando o JavaScript
-   estiver funcionando */
+/* ETAPA CONCLUÍDA */
 
 .etapa.concluida {
     color: #777;
@@ -95,12 +91,13 @@
 
 .etapa.concluida span {
     background-color: #eee;
+
     color: #555;
 }
 
 
 /* =========================
-   ÁREA DO CONTEÚDO
+   CONTEÚDO
    ========================= */
 
 .conteudo {
@@ -109,8 +106,6 @@
     padding: 5px 30px 20px 10px;
 }
 
-
-/* Título do fato */
 
 .conteudo > h1 {
     width: 100%;
@@ -121,6 +116,22 @@
 
     font-size: 18px;
     font-weight: normal;
+}
+
+
+/* =========================
+   ETAPAS DO FORMULÁRIO
+   ========================= */
+
+.etapa-registro {
+    display: none;
+}
+
+
+/* A primeira etapa começa visível */
+
+#etapa-1 {
+    display: block;
 }
 
 
@@ -143,10 +154,8 @@
 }
 
 
-/* Título da caixa */
-
 .caixa-formulario h2 {
-    margin: 0 0 10px 0;
+    margin: 0 0 12px 0;
 
     font-size: 13px;
 }
@@ -175,8 +184,37 @@
 }
 
 
-/* Linha que contém os inputs
-   e os checkboxes */
+.campo input[type="text"],
+.campo input[type="date"],
+.campo input[type="number"],
+.campo select,
+.campo textarea {
+    width: 100%;
+
+    height: 28px;
+
+    padding: 4px 8px;
+
+    border: 1px solid #ccc;
+    border-radius: 3px;
+
+    font-family: inherit;
+    font-size: 11px;
+
+    box-sizing: border-box;
+}
+
+
+.campo textarea {
+    height: 150px;
+
+    resize: vertical;
+}
+
+
+/* =========================
+   LINHAS DE CAMPOS
+   ========================= */
 
 .linha-campo {
     display: flex;
@@ -188,37 +226,43 @@
 }
 
 
-/* =========================
-   INPUTS
-   ========================= */
+.linha-formulario {
+    display: flex;
 
-input[type="date"],
-input[type="number"] {
-    height: 28px;
+    width: 100%;
 
-    padding: 4px 8px;
-
-    border: 1px solid #ccc;
-    border-radius: 3px;
-
-    font-family: inherit;
-    font-size: 11px;
+    gap: 10px;
 }
 
 
-/* Data */
+.linha-formulario .campo {
+    flex: 1;
+}
+
+
+.linha-formulario .campo-estado {
+    flex: 0 0 80px;
+}
+
+
+/* =========================
+   INPUTS DE DATA E HORA
+   ========================= */
 
 input[type="date"] {
     flex: 1;
 }
 
 
-/* Hora e minuto */
-
 input[type="number"] {
     flex: 1;
 
     min-width: 0;
+}
+
+
+input::placeholder {
+    color: #999;
 }
 
 
@@ -257,7 +301,34 @@ input[type="number"] {
 
 
 /* =========================
-   BOTÕES DE NAVEGAÇÃO
+   RESUMO
+   ========================= */
+
+.resumo {
+    font-size: 12px;
+}
+
+
+.resumo p {
+    margin: 8px 0;
+}
+
+
+.resumo-relato {
+    padding: 10px;
+
+    min-height: 70px;
+
+    background-color: #f5f5f5;
+
+    border: 1px solid #ddd;
+
+    white-space: pre-wrap;
+}
+
+
+/* =========================
+   NAVEGAÇÃO
    ========================= */
 
 .navegacao {
@@ -296,4 +367,41 @@ input[type="number"] {
     background-color: #aaa;
 
     cursor: not-allowed;
+}
+
+
+/* =========================
+   RESPONSIVIDADE BÁSICA
+   ========================= */
+
+@media (max-width: 700px) {
+
+    .registro {
+        flex-direction: column;
+    }
+
+    .etapas {
+        width: 100%;
+        min-width: 0;
+
+        padding: 5px;
+    }
+
+    .titulo-etapas {
+        margin-left: 5px;
+    }
+
+    .conteudo {
+        padding: 10px;
+    }
+
+    .linha-formulario {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .linha-formulario .campo-estado {
+        width: 100%;
+    }
+
 }

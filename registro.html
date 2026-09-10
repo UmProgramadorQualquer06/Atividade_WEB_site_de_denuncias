@@ -4,9 +4,12 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
     <title>Denuncias Online</title>
+
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <link rel="stylesheet" href="assets/css/index.css">
     <link rel="stylesheet" href="assets/css/registro.css">
 </head>
@@ -18,29 +21,33 @@
         <h1>DENUNCIAS ONLINE</h1>
     </header>
 
+
     <main class="registro">
+
+        <!-- =========================
+             ETAPAS
+             ========================= -->
 
         <aside class="etapas">
 
             <p class="titulo-etapas">Etapas do Registro</p>
 
-
-            <div class="etapa atual">
+            <div class="etapa atual" data-etapa="1">
                 <span>1</span>
                 <p>Data e Hora do Fato</p>
             </div>
 
-            <div class="etapa">
+            <div class="etapa" data-etapa="2">
                 <span>2</span>
                 <p>Local do Fato</p>
             </div>
 
-            <div class="etapa">
+            <div class="etapa" data-etapa="3">
                 <span>3</span>
                 <p>Relato do Fato</p>
             </div>
 
-            <div class="etapa">
+            <div class="etapa" data-etapa="4">
                 <span>4</span>
                 <p>Confirmação</p>
             </div>
@@ -48,73 +55,98 @@
         </aside>
 
 
-        <!-- ÁREA PRINCIPAL -->
+        <!-- =========================
+             CONTEÚDO
+             ========================= -->
+
         <section class="conteudo">
 
             <h1 id="titulo-fato">Template</h1>
 
-            <div class="caixa-formulario">
 
-                <h2>Insira a data e hora do fato</h2>
+            <!-- =========================
+                 ETAPA 1
+                 ========================= -->
 
-                <!-- DATA -->
-                <div class="campo">
+            <div class="etapa-registro" id="etapa-1">
 
-                    <label for="data">
-                        Data do Fato <span>*</span>
-                    </label>
+                <div class="caixa-formulario">
 
-                    <div class="linha-campo">
+                    <h2>Insira a data e hora do fato</h2>
 
-                        <input
-                            type="date"
-                            id="data"
-                            name="data"
-                        >
 
-                        <label class="checkbox">
-                            <input type="checkbox" name="data_aproximada">
-                            Data aproximada
+                    <!-- DATA -->
+
+                    <div class="campo">
+
+                        <label for="data">
+                            Data do Fato <span>*</span>
                         </label>
+
+                        <div class="linha-campo">
+
+                            <input
+                                type="date"
+                                id="data"
+                                name="data"
+                            >
+
+                            <label class="checkbox">
+                                <input
+                                    type="checkbox"
+                                    id="data-aproximada"
+                                    name="data_aproximada"
+                                >
+
+                                Data aproximada
+                            </label>
+
+                        </div>
 
                     </div>
 
-                </div>
 
+                    <!-- HORA -->
 
-                <!-- HORA -->
-                <div class="campo">
+                    <div class="campo">
 
-                    <label>
-                        Hora do Fato <span>*</span>
-                    </label>
-
-                    <div class="linha-campo">
-
-                        <input
-                            type="number"
-                            id="hora"
-                            name="hora"
-                            min="0"
-                            max="23"
-                            placeholder="HH"
-                        >
-
-                        <span class="separador">:</span>
-
-                        <input
-                            type="number"
-                            id="minuto"
-                            name="minuto"
-                            min="0"
-                            max="59"
-                            placeholder="MM"
-                        >
-
-                        <label class="checkbox">
-                            <input type="checkbox" name="hora_aproximada">
-                            Hora aproximada
+                        <label>
+                            Hora do Fato <span>*</span>
                         </label>
+
+                        <div class="linha-campo">
+
+                            <input
+                                type="number"
+                                id="hora"
+                                name="hora"
+                                min="0"
+                                max="23"
+                                placeholder="HH"
+                            >
+
+                            <span class="separador">:</span>
+
+                            <input
+                                type="number"
+                                id="minuto"
+                                name="minuto"
+                                min="0"
+                                max="59"
+                                placeholder="MM"
+                            >
+
+                            <label class="checkbox">
+                                <input
+                                    type="checkbox"
+                                    id="hora-aproximada"
+                                    name="hora_aproximada"
+                                >
+
+                                Hora aproximada
+                            </label>
+
+                        </div>
 
                     </div>
 
@@ -123,14 +155,258 @@
             </div>
 
 
-            <!-- BOTÕES -->
+            <!-- =========================
+                 ETAPA 2
+                 ========================= -->
+
+            <div class="etapa-registro" id="etapa-2">
+
+                <div class="caixa-formulario">
+
+                    <h2>Insira o local onde ocorreu o fato</h2>
+
+
+                    <div class="campo">
+
+                        <label for="logradouro">
+                            Logradouro <span>*</span>
+                        </label>
+
+                        <input
+                            type="text"
+                            id="logradouro"
+                            name="logradouro"
+                            placeholder="Rua, avenida, estrada..."
+                        >
+
+                    </div>
+
+
+                    <div class="linha-formulario">
+
+                        <div class="campo">
+
+                            <label for="numero">
+                                Número
+                            </label>
+
+                            <input
+                                type="text"
+                                id="numero"
+                                name="numero"
+                            >
+
+                        </div>
+
+
+                        <div class="campo">
+
+                            <label for="complemento">
+                                Complemento
+                            </label>
+
+                            <input
+                                type="text"
+                                id="complemento"
+                                name="complemento"
+                                placeholder="Apartamento, bloco..."
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="linha-formulario">
+
+                        <div class="campo">
+
+                            <label for="bairro">
+                                Bairro <span>*</span>
+                            </label>
+
+                            <input
+                                type="text"
+                                id="bairro"
+                                name="bairro"
+                            >
+
+                        </div>
+
+
+                        <div class="campo">
+
+                            <label for="cidade">
+                                Cidade <span>*</span>
+                            </label>
+
+                            <input
+                                type="text"
+                                id="cidade"
+                                name="cidade"
+                            >
+
+                        </div>
+
+
+                        <div class="campo campo-estado">
+
+                            <label for="estado">
+                                Estado <span>*</span>
+                            </label>
+
+                            <select id="estado" name="estado">
+
+                                <option value="">UF</option>
+                                <option value="AC">AC</option>
+                                <option value="AL">AL</option>
+                                <option value="AP">AP</option>
+                                <option value="AM">AM</option>
+                                <option value="BA">BA</option>
+                                <option value="CE">CE</option>
+                                <option value="DF">DF</option>
+                                <option value="ES">ES</option>
+                                <option value="GO">GO</option>
+                                <option value="MA">MA</option>
+                                <option value="MT">MT</option>
+                                <option value="MS">MS</option>
+                                <option value="MG">MG</option>
+                                <option value="PA">PA</option>
+                                <option value="PB">PB</option>
+                                <option value="PR">PR</option>
+                                <option value="PE">PE</option>
+                                <option value="PI">PI</option>
+                                <option value="RJ">RJ</option>
+                                <option value="RN">RN</option>
+                                <option value="RS">RS</option>
+                                <option value="RO">RO</option>
+                                <option value="RR">RR</option>
+                                <option value="SC">SC</option>
+                                <option value="SP">SP</option>
+                                <option value="SE">SE</option>
+                                <option value="TO">TO</option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="campo">
+
+                        <label for="referencia">
+                            Ponto de referência
+                        </label>
+
+                        <input
+                            type="text"
+                            id="referencia"
+                            name="referencia"
+                            placeholder="Algum ponto de referência próximo..."
+                        >
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =========================
+                 ETAPA 3
+                 ========================= -->
+
+            <div class="etapa-registro" id="etapa-3">
+
+                <div class="caixa-formulario">
+
+                    <h2>Relate o que aconteceu</h2>
+
+                    <div class="campo">
+
+                        <label for="relato">
+                            Relato do fato <span>*</span>
+                        </label>
+
+                        <textarea
+                            id="relato"
+                            name="relato"
+                            placeholder="Descreva o que aconteceu..."
+                        ></textarea>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =========================
+                 ETAPA 4
+                 ========================= -->
+
+            <div class="etapa-registro" id="etapa-4">
+
+                <div class="caixa-formulario">
+
+                    <h2>Confirme os dados da denúncia</h2>
+
+                    <div class="resumo">
+
+                        <p>
+                            <strong>Fato:</strong>
+                            <span id="resumo-fato"></span>
+                        </p>
+
+                        <p>
+                            <strong>Data:</strong>
+                            <span id="resumo-data"></span>
+                        </p>
+
+                        <p>
+                            <strong>Hora:</strong>
+                            <span id="resumo-hora"></span>
+                        </p>
+
+                        <p>
+                            <strong>Local:</strong>
+                            <span id="resumo-local"></span>
+                        </p>
+
+                        <p>
+                            <strong>Relato:</strong>
+                        </p>
+
+                        <p class="resumo-relato" id="resumo-relato"></p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =========================
+                 NAVEGAÇÃO
+                 ========================= -->
+
             <div class="navegacao">
 
-                <button type="button" class="botao anterior">
+                <button
+                    type="button"
+                    class="botao anterior"
+                    id="botao-anterior"
+                >
                     ◀ Etapa anterior
                 </button>
 
-                <button type="button" class="botao proxima">
+
+                <button
+                    type="button"
+                    class="botao proxima"
+                    id="botao-proxima"
+                >
                     Próxima etapa ▶
                 </button>
 
@@ -140,7 +416,9 @@
 
     </main>
 
+
+    <script src="assets/js/registro.js"></script>
+
 </body>
-<script src="assets/js/registro.js"></script>
 
 </html>
