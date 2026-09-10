@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Denuncias Online</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="assets/css/index.css">
+    <link rel="stylesheet" href="assets/css/registro.css">
+</head>
+
+<body>
+
+    <header>
+        <img src="https://delegaciavirtual.sc.gov.br/assets/estados/sc/imagens/logo-superior.png">
+        <h1>DENUNCIAS ONLINE</h1>
+    </header>
+
+    <main class="registro">
+
+        <aside class="etapas">
+
+            <p class="titulo-etapas">Etapas do Registro</p>
+
+
+            <div class="etapa atual">
+                <span>1</span>
+                <p>Data e Hora do Fato</p>
+            </div>
+
+            <div class="etapa">
+                <span>2</span>
+                <p>Local do Fato</p>
+            </div>
+
+            <div class="etapa">
+                <span>3</span>
+                <p>Relato do Fato</p>
+            </div>
+
+            <div class="etapa">
+                <span>4</span>
+                <p>Confirmação</p>
+            </div>
+
+        </aside>
+
+
+        <!-- ÁREA PRINCIPAL -->
+        <section class="conteudo">
+
+            <h1 id="titulo-fato">Template</h1>
+
+            <div class="caixa-formulario">
+
+                <h2>Insira a data e hora do fato</h2>
+
+                <!-- DATA -->
+                <div class="campo">
+
+                    <label for="data">
+                        Data do Fato <span>*</span>
+                    </label>
+
+                    <div class="linha-campo">
+
+                        <input
+                            type="date"
+                            id="data"
+                            name="data"
+                        >
+
+                        <label class="checkbox">
+                            <input type="checkbox" name="data_aproximada">
+                            Data aproximada
+                        </label>
+
+                    </div>
+
+                </div>
+
+
+                <!-- HORA -->
+                <div class="campo">
+
+                    <label>
+                        Hora do Fato <span>*</span>
+                    </label>
+
+                    <div class="linha-campo">
+
+                        <input
+                            type="number"
+                            id="hora"
+                            name="hora"
+                            min="0"
+                            max="23"
+                            placeholder="HH"
+                        >
+
+                        <span class="separador">:</span>
+
+                        <input
+                            type="number"
+                            id="minuto"
+                            name="minuto"
+                            min="0"
+                            max="59"
+                            placeholder="MM"
+                        >
+
+                        <label class="checkbox">
+                            <input type="checkbox" name="hora_aproximada">
+                            Hora aproximada
+                        </label>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- BOTÕES -->
+            <div class="navegacao">
+
+                <button type="button" class="botao anterior">
+                    ◀ Etapa anterior
+                </button>
+
+                <button type="button" class="botao proxima">
+                    Próxima etapa ▶
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</body>
+<script src="assets/js/registro.js"></script>
+
+</html>
