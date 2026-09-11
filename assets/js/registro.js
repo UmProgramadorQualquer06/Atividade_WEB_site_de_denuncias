@@ -1,67 +1,29 @@
-let etapaAtual = 1;
+let etapaAtual = 0;
 
 const totalEtapas = 4;
 
-const etapas = document.querySelectorAll(".etapa-registro");
-const indicadores = document.querySelectorAll(".etapa");
 const botaoAnterior = document.getElementById("botao-anterior");
 const botaoProxima = document.getElementById("botao-proxima");
-const tituloFato = document.getElementById("titulo-fato");
 
-const parametros = new URLSearchParams(window.location.search);
-
-const fato = parametros.get("fato");
-
-
-if (fato === "furto") {
-    tituloFato.textContent = "FURTO SIMPLES";
+function esconderEtapa(){
+    let etapa = document.getElementById(`etapa-${etapaAtual}`)
+    etapa.style.display = "none"
 }
-else if (fato === "golpe") {
-    tituloFato.textContent = "GOLPE";
-}
-else if (fato === "ameaca") {
-    tituloFato.textContent = "AMEAÇA";
-}
-else if (fato === "difamacao") {
-    tituloFato.textContent = "DIFAMAÇÃO";
-}
-else {
-    tituloFato.textContent = "Fato não informado";
-}
-
-function mostrarEtapa(numero) {
-    etapaAtual = numero;
-    etapas.forEach(function (etapa) {
-        etapa.style.display = "none";
-    });
-    const etapa = document.getElementById("etapa-" + etapaAtual);
-    etapa.style.display = "block";
-
-    indicadores.forEach(function (indicador) {
-        const numeroEtapa = Number(indicador.dataset.etapa);
-        indicador.classList.remove("atual");
-        indicador.classList.remove("concluida");
-        if (numeroEtapa === etapaAtual) {
-            indicador.classList.add("atual");
-        }
-        else if (numeroEtapa < etapaAtual) {
-            indicador.classList.add("concluida");
-        }
-    });
-    if (etapaAtual === 1) {
-        botaoAnterior.disabled = true;
+function mostrarEtapa(){
+    let etapa = document.getElementById(`etapa-${etapaAtual}`)
+    etapa.style.display = "block"
+    if(etapaAtual === 0){
+        botaoProxima.style.display = "none"
+        etapa.style.display = "flex"
+    }else{
+        botaoProxima.style.display = "block"
     }
-    else {
-        botaoAnterior.disabled = false;
-    }
-
-    if (etapaAtual === totalEtapas) {
+    if(etapaAtual === 4){
+        atualizarResumo();
         botaoProxima.textContent = "Finalizar denúncia";
     }
-    if (etapaAtual === 4) {
-        atualizarResumo();
-    }
 }
+mostrarEtapa()
 
 function validarEtapa() {
     if (etapaAtual === 1) {
@@ -78,7 +40,6 @@ function validarEtapa() {
         }
         return true;
     }
-
     if (etapaAtual === 2) {
         const logradouro =
             document.getElementById("logradouro").value;
@@ -107,8 +68,7 @@ function validarEtapa() {
         }
         return true;
     }
-
-    if (etapaAtual === 3) {
+    if(etapaAtual === 3) {
         const relato =
             document.getElementById("relato").value.trim();
         if (relato === "") {
@@ -120,26 +80,36 @@ function validarEtapa() {
     return true;
 }
 
-botaoProxima.addEventListener("click", function () {
+let tituloFato = ""
+function defineFato(fato){
+    tituloFato = fato
+    FbotaoProxima()
+}
+
+function FbotaoProxima(){
     if (etapaAtual < totalEtapas) {
         if (!validarEtapa()) {
             return;
         }
-        mostrarEtapa(etapaAtual + 1);
+        esconderEtapa()
+        etapaAtual += 1
+        mostrarEtapa();
     }
     else {
         finalizarDenuncia();
     }
-});
+}
 
-botaoAnterior.addEventListener("click", function () {
-    if (etapaAtual > 1) {
-        mostrarEtapa(etapaAtual - 1);
+function FbotaoAnterior(){
+    if (etapaAtual > 0) {
+        esconderEtapa()
+        etapaAtual -= 1
+        mostrarEtapa();
     }
     else {
-        window.location.href = "denuncia.html";
+        window.location.href = "index.html";
     }
-});
+}
 
 function atualizarResumo() {
     const data =
@@ -186,9 +156,10 @@ function atualizarResumo() {
     document.getElementById("resumo-relato").textContent =
         relato;
     document.getElementById("resumo-fato").textContent =
-        tituloFato.textContent;
+        tituloFato;
 }
 
 function finalizarDenuncia() {
     alert("Denúncia preenchida com sucesso!");
+    window.location.href = "index.html";
 }

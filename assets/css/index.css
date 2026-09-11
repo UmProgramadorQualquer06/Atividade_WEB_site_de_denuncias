@@ -12,7 +12,7 @@ header{
     align-items: center;
     flex-direction: column;
 }
-header h1{
+header h2{
     margin: 0%;
 }
 header img{
@@ -37,8 +37,26 @@ footer p{
     margin: 1%;
 }
 
-h1{
+h2{
     width: 100%;
     text-fit: shrink;
     text-align: center;
+}
+
+.botao{
+    padding: 5px 8px;
+    background-color: black;
+    color: white;
+    border: 2px rgb(34, 34, 34) solid;
+    font-family: inherit;
+    font-size: 12px;
+    cursor: pointer;
+    &:hover{
+        background-color: #555;
+    }
+    &:disabled{
+        border: 2px #555 solid;
+        background-color: #aaa;
+        cursor: not-allowed;
+    }
 }

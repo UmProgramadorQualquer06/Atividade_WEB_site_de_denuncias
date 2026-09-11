@@ -1,3 +1,32 @@
+#etapa-0{
+    display: flex;
+    flex-direction: column;
+}
+
+#etapa-0 button{
+    color: black;
+    text-decoration: none;
+    display: flex;
+    margin: 1%;
+    border: 2px black solid;
+
+    &:hover{
+        background-color: rgb(219, 217, 217);
+    }
+}
+
+#etapa-0 button img{
+    margin: 1%;
+    margin-right: 2%;
+}
+
+#etapa-0 button p{
+    margin: 0;
+    font-size: 120%;
+    width: 100%;
+    align-content: center;
+}
+
 .registro {
     display: flex;
     width: 100%;
@@ -10,59 +39,8 @@
     padding: 10px 8px;
 }
 
-.titulo-etapas {
-    margin: 0 0 8px 45px;
-    font-size: 12px;
-    color: #999;
-}
-
-.etapa {
-    display: flex;
-    align-items: center;
-    height: 42px;
-    border: 1px solid #ddd;
-    color: #bbb;
-}
-
-.etapa span {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 24px;
-    height: 24px;
-    margin-left: 8px;
-    margin-right: 8px;
-    border: 1px solid #ddd;
-    border-radius: 50%;
-    font-size: 11px;
-}
-
-.etapa p {
-    margin: 0;
-    font-size: 11px;
-}
-
-.etapa.atual {
-    color: #555;
-}
-
-.etapa.atual span {
-    background-color: #333;
-    border-color: #333;
-}
-
-.etapa.concluida {
-    color: #777;
-}
-
-.etapa.concluida span {
-    background-color: #eee;
-    color: #555;
-}
-
 .conteudo {
-    flex: 1;
-    padding: 5px 30px 20px 10px;
+    width: 100%;
 }
 
 .conteudo>h1 {
@@ -75,10 +53,6 @@
 
 .etapa-registro {
     display: none;
-}
-
-#etapa-1 {
-    display: block;
 }
 
 .caixa-formulario {
@@ -193,24 +167,4 @@ input::placeholder {
     align-items: center;
     width: 100%;
     margin-top: 5px;
-}
-
-.botao {
-    padding: 5px 8px;
-    background-color: #333;
-    color: white;
-    border: none;
-    border-radius: 2px;
-    font-family: inherit;
-    font-size: 10px;
-    cursor: pointer;
-}
-
-.botao:hover {
-    background-color: #555;
-}
-
-.botao:disabled {
-    background-color: #aaa;
-    cursor: not-allowed;
 }
